@@ -63,7 +63,7 @@ def task_calculate_points(request):
 
 		ts = int(str(data['move_events'][-1]['timeStamp'])[0:10])
 		event_time = datetime.fromtimestamp(ts)
-		Thermography_points(
+		ThermographyPoints(
 			thermography = thermography, 
 			data = json.dumps(points), 
 			year_calculate_status = 0,
@@ -87,19 +87,19 @@ def task_calculate_point_daily(request):
 	day = now.day
 	date = "%04d%02d%02d" % (year, month, day)
 
-	thermographies = Thermography_point_daily.all().filter("date =",date).fetch(1)
+	thermographies = ThermographyPointDaily.all().filter("date =",date).fetch(1)
 	total_points = {}
 	if thermographies:
 		thermography = thermographies[0]
 		total_points = json.loads(thermography.data)
 	else:
-		thermography = Thermography_point_daily()
+		thermography = ThermographyPointDaily()
 		thermography.date = date
 		thermography.year = year
 		thermography.month = month
 		thermography.day = day
 
-	thermography_points = Thermography_points.all().filter("day_calculate_status =",0).filter("date =",date).fetch(10)
+	thermography_points = ThermographyPoints.all().filter("day_calculate_status =",0).filter("date =",date).fetch(10)
 	logging.info(thermography_points)
 	for thermography_point in thermography_points:
 		points = json.loads(thermography_point.data)

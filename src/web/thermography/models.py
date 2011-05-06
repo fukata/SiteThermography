@@ -9,7 +9,7 @@ class Thermographies(db.Model):
 	calculate_status = db.IntegerProperty()
 	url = db.TextProperty()
 
-class Thermography_points(db.Model):
+class ThermographyPoints(db.Model):
 	thermography = db.ReferenceProperty(Thermographies)
 	data = db.TextProperty()
 	year_calculate_status = db.IntegerProperty()
@@ -21,7 +21,7 @@ class Thermography_points(db.Model):
 	day = db.IntegerProperty() # DD
 	url = db.TextProperty()
 
-class Thermography_point_daily(db.Model):
+class ThermographyPointDaily(db.Model):
 	data = db.TextProperty()
 	calculate_status = db.IntegerProperty()
 	date = db.StringProperty() # YYYYMMDD

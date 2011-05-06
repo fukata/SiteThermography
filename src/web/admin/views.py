@@ -26,9 +26,10 @@ from kay.auth.decorators import login_required
 """
 
 from kay.utils import render_to_response
-
+from kay.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def index(request):
   return render_to_response('admin/index.html', {'message': 'Hello'})

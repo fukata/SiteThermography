@@ -21,7 +21,6 @@ ADD_APP_PREFIX_TO_KIND = True
 
 ADMINS = (
 )
-
 TEMPLATE_DIRS = (
 )
 
@@ -29,6 +28,7 @@ USE_I18N = False
 DEFAULT_LANG = 'en'
 
 INSTALLED_APPS = (
+	'kay.auth',
 	'thermography',
 	'admin',
 )
@@ -44,3 +44,9 @@ CONTEXT_PROCESSORS = (
   'kay.context_processors.url_functions',
   'kay.context_processors.media_url',
 )
+
+MIDDLEWARE_CLASSES = (
+  'kay.auth.middleware.AuthenticationMiddleware',
+)
+
+AUTH_USER_MODEL = 'admin.models.SiteUsers'
