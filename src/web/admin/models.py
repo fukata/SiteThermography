@@ -7,3 +7,4 @@ from kay.auth.models import GoogleUser
 # Create your models here.
 class SiteUsers(GoogleUser):
 	url = db.TextProperty()
+	activate_code = db.StringProperty()

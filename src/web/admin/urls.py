@@ -25,6 +25,8 @@ from kay.routing import (
 view_groups = [
   ViewGroup(
     Rule('/', endpoint='index', view='admin.views.index'),
+    Rule('/settings', endpoint='settings', view='admin.views.settings'),
+    Rule('/thermography', endpoint='thermography', view='admin.views.thermography'),
   )
 ]
 
