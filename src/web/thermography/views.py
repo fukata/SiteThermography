@@ -40,7 +40,11 @@ def index(request):
 def track(request):
 	if request.method != "POST":
 		return render_json_response({'error':'Invalid method'})
-
+	
+	data = json.loads(request.form['data'])
+	if len(data['move_events'])==0: 
+		return render_json_response({'error':'Invalid arguments'})
+	
 	t = Thermographies(data=request.form['data'], calculate_status=0)
 	t.put()
 	return render_json_response({'message':'Tracking successful'})
