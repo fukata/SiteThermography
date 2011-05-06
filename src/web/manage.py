@@ -1,0 +1,1 @@
+/home/tatsuya/usr/local/kay/manage.py
