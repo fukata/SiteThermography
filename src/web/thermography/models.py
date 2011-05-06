@@ -7,6 +7,7 @@ from google.appengine.ext import db
 class Thermographies(db.Model):
 	data = db.TextProperty()
 	calculate_status = db.IntegerProperty()
+	url = db.TextProperty()
 
 class Thermography_points(db.Model):
 	thermography = db.ReferenceProperty(Thermographies)
@@ -18,6 +19,7 @@ class Thermography_points(db.Model):
 	year = db.IntegerProperty() # YYYY
 	month = db.IntegerProperty() # MM
 	day = db.IntegerProperty() # DD
+	url = db.TextProperty()
 
 class Thermography_point_daily(db.Model):
 	data = db.TextProperty()
@@ -26,3 +28,4 @@ class Thermography_point_daily(db.Model):
 	year = db.IntegerProperty() # YYYY
 	month = db.IntegerProperty() # MM
 	day = db.IntegerProperty() # DD
+	url = db.TextProperty()

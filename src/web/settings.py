@@ -30,10 +30,12 @@ DEFAULT_LANG = 'en'
 
 INSTALLED_APPS = (
 	'thermography',
+	'admin',
 )
 
 APP_MOUNT_POINTS = {
 	'thermography': '/',
+	'admin': '/admin',
 }
 
 # You can remove following settings if unnecessary.

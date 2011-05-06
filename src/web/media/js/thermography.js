@@ -1,5 +1,6 @@
 (function($){
 	var data = {
+		url: document.URL,
 		move_events: [],
 		unload_event: null,
 	};
