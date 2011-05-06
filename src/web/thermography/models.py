@@ -4,3 +4,25 @@
 from google.appengine.ext import db
 
 # Create your models here.
+class Thermographies(db.Model):
+	data = db.TextProperty()
+	calculate_status = db.IntegerProperty()
+
+class Thermography_points(db.Model):
+	thermography = db.ReferenceProperty(Thermographies)
+	data = db.TextProperty()
+	year_calculate_status = db.IntegerProperty()
+	month_calculate_status = db.IntegerProperty()
+	day_calculate_status = db.IntegerProperty()
+	date = db.StringProperty() # YYYYMMDD
+	year = db.IntegerProperty() # YYYY
+	month = db.IntegerProperty() # MM
+	day = db.IntegerProperty() # DD
+
+class Thermography_point_daily(db.Model):
+	data = db.TextProperty()
+	calculate_status = db.IntegerProperty()
+	date = db.StringProperty() # YYYYMMDD
+	year = db.IntegerProperty() # YYYY
+	month = db.IntegerProperty() # MM
+	day = db.IntegerProperty() # DD

@@ -25,6 +25,9 @@ from kay.routing import (
 view_groups = [
   ViewGroup(
     Rule('/', endpoint='index', view='thermography.views.index'),
+    Rule('/track', endpoint='track', view='thermography.views.track'),
+    Rule('/task_calculate_points', endpoint='task_calculate_points', view='thermography.views.task_calculate_points'),
+    Rule('/task_calculate_point_daily', endpoint='task_calculate_point_daily', view='thermography.views.task_calculate_point_daily'),
   )
 ]
 
