@@ -102,6 +102,7 @@ def task_calculate_point_daily(request):
 		thermography.year = year
 		thermography.month = month
 		thermography.day = day
+		thermography.maxPoint = 0
 
 	thermography_points = ThermographyPoints.all().filter("day_calculate_status =",0).filter("date =",date).fetch(10)
 	logging.info(thermography_points)
@@ -114,7 +115,9 @@ def task_calculate_point_daily(request):
 				total_points[key] = points[key]
 
 		thermography.data = json.dumps(total_points)
+		thermography.maxPoint = max(total_points.values())
 		thermography.put()
+
 		thermography_point.day_calculate_status = 1
 		thermography_point.put()
 

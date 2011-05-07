@@ -29,3 +29,4 @@ class ThermographyPointDaily(db.Model):
 	month = db.IntegerProperty() # MM
 	day = db.IntegerProperty() # DD
 	url = db.TextProperty()
+	maxPoint = db.IntegerProperty()

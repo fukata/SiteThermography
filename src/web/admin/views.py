@@ -30,6 +30,7 @@ from kay.utils import url_for
 from kay.auth.decorators import login_required
 from werkzeug import redirect
 from admin.forms import SettingForm
+import urllib2
 import logging
 
 # Create your views here.
@@ -75,5 +76,27 @@ def settings(request):
 @login_required
 def thermography(request):
 	if _invalid_configuration(request): return _redirect_configuration(request)
-	
-	return render_to_response('admin/thermography.html', {})
+
+	import thermography.models
+	import time
+	thermographies = thermography.models.ThermographyPointDaily.all().fetch(1)
+	if thermographies:
+		points_json = thermographies[0].data
+		max_point = thermographies[0].maxPoint
+	else:
+		points_json = '{}'
+		max_point = 0
+	return render_to_response('admin/thermography.html', {"time":time.time(), "points":points_json, "max_point":max_point})
+
+@login_required
+def site_view(request):
+	if _invalid_configuration(request): return _redirect_configuration(request)
+
+	from xml.sax.saxutils import *
+	url = "http://fukata.org"
+	html = urllib2.urlopen(url).read()
+	html = unicode(html, 'utf8', 'ignore')
+	return render_to_response('admin/site_view.html', {"html":html})
+
+
+
