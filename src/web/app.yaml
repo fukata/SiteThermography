@@ -1,4 +1,4 @@
-application: web
+application: site-thermography
 version: 1
 runtime: python
 api_version: 1
@@ -11,6 +11,10 @@ handlers:
 
 - url: /media
   static_dir: media
+
+- url: /media/dummy.html
+  static_dir: media
+  login: admin
 
 - url: /_generated_media
   static_dir: _generated_media
@@ -32,6 +36,10 @@ handlers:
 
 - url: /_ah/test.*
   script: kay/ext/testutils/gaeunit.py
+  login: admin
+
+- url: /task_.*
+  script: kay/main.py
   login: admin
 
 - url: /.*

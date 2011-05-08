@@ -1,0 +1,13 @@
+cron:
+- description: calculate points
+  url: /task_calculate_points
+  schedule: every 1 minutes
+  timezone: Asia/Tokyo
+- description: calculate point daily
+  url: /task_calculate_point_daily
+  schedule: every 1 minutes
+  timezone: Asia/Tokyo
+- description: calculate point month
+  url: /task_calculate_point_month
+  schedule: every 10 minutes
+  timezone: Asia/Tokyo

@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /task_*
+Disallow: /admin/
+Disallow: /media/admin/

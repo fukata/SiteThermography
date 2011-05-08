@@ -26,6 +26,8 @@ view_groups = [
   ViewGroup(
     Rule('/', endpoint='index', view='admin.views.index'),
     Rule('/settings', endpoint='settings', view='admin.views.settings'),
+    Rule('/site_edit', endpoint='site_edit', view='admin.views.site_edit'),
+    Rule('/thermographies', endpoint='thermographies', view='admin.views.thermographies'),
     Rule('/thermography', endpoint='thermography', view='admin.views.thermography'),
     Rule('/site_view', endpoint='site_view', view='admin.views.site_view'),
   )

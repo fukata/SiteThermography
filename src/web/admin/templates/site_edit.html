@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>サイトの登録 - サイトサーモグラフィ</title>
+</head>
+<body>
+<h1>サイトの登録</h1>
+
+<div id="main_form">
+	{{ form()|safe }}
+</div>
+
+<script type="text/javascript" src="/media/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	if ($('#f_edit').val() == '1') {
+		$('#f_url').attr('readonly',true).css({
+			"background-color": "#CCC"
+		});
+	} else {
+		$('#f_delete').attr('disabled',true);
+	}
+	$('#f_url').attr({"size":50});
+	$('#f_activate_code').attr({"disabled":true, "size":50});
+});
+</script>
+</body>
+</html>

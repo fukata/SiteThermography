@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/media/admin/css/thermography.css" type="text/css" />
+<title>サーモグラフィ一覧 - サイトサーモグラフィ</title>
+</head>
+<body>
+
+<h2>サイト一覧</h2>
+<ul>
+{% for s in request.user.sites %}
+	<li><a href="/admin/thermographies?site={{s.key()}}">{{ s.url }}</a></li>
+{% endfor %}
+</ul>
+
+{% if site %}
+<h2>{{ site.url }}</h2>
+	{% if thermographies %}
+		<ul>
+		{% for t in thermographies %}
+			<li><a href="/admin/thermography?url={{t.url}}&date={{t.date}}">{{ t.display_date }} - {{ t.url }}</a></li>
+		{% endfor %}
+		</ul>
+	{% endif %}
+{% endif %}
+
+</body>
+</html>

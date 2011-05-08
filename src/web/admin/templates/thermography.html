@@ -3,15 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/media/admin/css/thermography.css" type="text/css" />
-<title>Site Thermography</title>
+<title>サーモグラフィ - サイトサーモグラフィ</title>
 </head>
 <body>
 
-<iframe id="thermography_frame" src="/admin/site_view" allowtransparency="true" border="0" frameborder="0"></iframe>
+<iframe id="thermography_frame" src="/admin/site_view?url={{url}}" allowtransparency="true" border="0" frameborder="0"></iframe>
 
 <script type="text/javascript">
 	var points = {{ points|safe }};
-	var maxPoint = {{ max_point|safe }};
+	var max_point = {{ max_point|safe }};
 </script>
 <script type="text/javascript" src="/media/js/jquery.min.js"></script>
 <script type="text/javascript" src="/media/admin/js/thermography.js?{{time}}"></script>

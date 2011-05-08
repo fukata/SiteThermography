@@ -28,6 +28,7 @@ view_groups = [
     Rule('/track', endpoint='track', view='thermography.views.track'),
     Rule('/task_calculate_points', endpoint='task_calculate_points', view='thermography.views.task_calculate_points'),
     Rule('/task_calculate_point_daily', endpoint='task_calculate_point_daily', view='thermography.views.task_calculate_point_daily'),
+    Rule('/task_calculate_point_month', endpoint='task_calculate_point_month', view='thermography.views.task_calculate_point_month'),
   )
 ]
 
