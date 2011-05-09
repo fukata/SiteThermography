@@ -1,1 +1,4 @@
 *.pyc
+.settings
+/src/web/thermography/templates_compiled/
+/src/web/admin/templates_compiled/
