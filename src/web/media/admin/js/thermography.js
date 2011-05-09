@@ -46,7 +46,7 @@
 	$frame.height($(window).height()-20);
 	var $fw = $($frame[0].contentWindow);
 	$frame.bind('load.thermography', function(){
-		console.log("thermography_frame loaded.");
+//		console.log("thermography_frame loaded.");
 		var $fb = $($frame[0].contentWindow.document.body);
 		var $canvasDiv = $(document.createElement('div')).css({
 			"z-index":1000,
@@ -70,7 +70,7 @@
 
 			var per = ~~( (point / max_point) * 100 );
 			var color = getColor( ~~( per * 2.55 ) );
-			console.log("color=%s", color);
+//			console.log("color=%s", color);
 
 			var $div = $(document.createElement('div'));
 			$div.attr({
@@ -82,9 +82,9 @@
 				"left": x + "px",
 				"width": pointScale + "px",
 				"height": pointScale + "px",
-				"filter": "alpha(opacity=50)",
-				"-moz-opacity":"0.50",
-				"opacity":"0.50",
+				"filter": "alpha(opacity=75)",
+				"-moz-opacity":"0.75",
+				"opacity":"0.75",
 				"z-index": 10000+per
 			}).hover(function(){
 				$(this).css({"border":"2px solid #FFFF00"});
