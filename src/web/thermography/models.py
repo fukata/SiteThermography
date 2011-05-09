@@ -37,9 +37,9 @@ class ThermographyPointDaily(db.Model):
 	
 	@property
 	def display_date(self):
-		if self.month == 0 and self.day == 0:
+		if int(self.month) == 0 and int(self.day) == 0:
 			return self.year
-		elif self.month == 0:
+		elif int(self.day) == 0:
 			return "%d/%02d" % (self.year, self.month)
 		else:
 			return "%d/%02d/%02d" % (self.year, self.month, self.day)
