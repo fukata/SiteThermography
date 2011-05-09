@@ -19,7 +19,7 @@
 	{% if thermographies %}
 		<ul>
 		{% for t in thermographies %}
-			<li><a href="/admin/thermography?url={{t.url}}&date={{t.date}}">{{ t.display_date }} - {{ t.url }}</a></li>
+			<li><a href="/admin/thermography?url={{t.url}}&date={{t.date}}" target="_blank">{{ t.display_date }} - {{ t.url }}</a></li>
 		{% endfor %}
 		</ul>
 	{% endif %}
