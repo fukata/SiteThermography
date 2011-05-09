@@ -47,7 +47,7 @@ limitations under the License.
 
 		elements.each(function() {
 			console.log(this);
-			heat(this, options, points, maxPoint);
+			drawHeatMap(this, options, points, maxPoint);
 		});
 
 		return this;
@@ -93,7 +93,7 @@ limitations under the License.
 		return "#" + toHex(r) + toHex(g) + toHex(b);
 	}
 
-	function heat(element, options, points, maxPoint) {
+	function drawHeatMap(element, options, points, maxPoint) {
 		var $self = $(element);
 		var o = $self.offset();
 		var h = $self.outerHeight() + (o.top + o.left);
